@@ -1,3 +1,7 @@
+# Tanstack
+.tanstack
+src/routeTree.gen.ts
+
 # Logs
 logs
 *.log
