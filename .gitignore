@@ -1,6 +1,7 @@
 # Tanstack
 .tanstack
 src/routeTree.gen.ts
+space-tourism-website-main
 
 # Logs
 logs
