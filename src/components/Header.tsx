@@ -1,11 +1,16 @@
-import { Link } from "@tanstack/react-router"
+import { Link } from '@tanstack/react-router';
+import { logo, menuIcon, closeIcon } from '../assets/shared';
 
 const Header = () => {
-  return (
-		<header>
-			<img src='' alt='' />
+
+
+	return (
+		<header className='flex justify-between items-center'>
+			<img src={logo} alt='space tourism logo' />
+			<img src={menuIcon} alt="hamburger icon" />
+			<img src={closeIcon} alt="close icon" />
 			<nav>
-				<ul>
+				<ul className=''>
 					<li>
 						<Link to='/'>Home</Link>
 					</li>
@@ -21,6 +26,6 @@ const Header = () => {
 				</ul>
 			</nav>
 		</header>
-  );
-}
-export default Header
+	);
+};
+export default Header;
