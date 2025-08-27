@@ -1,18 +1,33 @@
-import { createFileRoute, Link, Outlet } from '@tanstack/react-router';
+import {
+	createFileRoute,
+	Link,
+	Outlet,
+	useLocation,
+} from '@tanstack/react-router';
 import { destinations } from '../../constants/data';
 
 export const Route = createFileRoute('/destination')({
-	component: RouteComponent,
+	component: DestinationLayout,
 });
 
-function RouteComponent() {
+function DestinationLayout() {
+	const location = useLocation();
+	const pathSplit = location.pathname.split('/');
+	const planetName = pathSplit[2];
+
+	const planet = planetName
+  ? destinations.find(
+    (p) => p.name.toLowerCase() === planetName.toLowerCase()
+  )
+  : undefined;
+
 	return (
 		<div>
 			<p>
 				<span>01</span> <span>Pick your destination</span>
 			</p>
 
-			<img src='' alt='selected planet' />
+			<img src={planet?.image} alt='selected planet' />
 
 			<main>
 				<nav>
