@@ -12,30 +12,40 @@ export const Route = createFileRoute('/destination')({
 
 function DestinationLayout() {
 	const location = useLocation();
-	const pathSplit = location.pathname.split('/');
-	const planetName = pathSplit[2];
+	const planetName = location.pathname.split('/').at(2);
+	// const planetName = pathSplit[2];
 
 	const planet = planetName
-  ? destinations.find(
-    (p) => p.name.toLowerCase() === planetName.toLowerCase()
-  )
-  : undefined;
+		? destinations.find(
+				(p) => p.name.toLowerCase() === planetName.toLowerCase()
+		  )
+		: undefined;
 
 	return (
-		<div>
-			<p>
-				<span>01</span> <span>Pick your destination</span>
+		<div className='text-center px-8'>
+			<p className='font-sans-cond uppercase flex justify-center gap-2'>
+				<span className='font-bold tracking-wider'>01</span>
+				<span className='text-base tracking-widest'>
+					Pick your destination
+				</span>
 			</p>
 
-			<img src={planet?.image} alt='selected planet' />
+			{planetName && (
+				<img
+					src={planet?.image}
+					alt={planet?.name}
+					className='w-37.5 mx-auto my-12'
+				/>
+			)}
 
 			<main>
-				<nav>
+				<nav className='flex justify-center gap-6 min-h-fit'>
 					{destinations.map((planet) => (
 						<Link
 							key={planet.name}
 							to='/destination/$name'
 							params={{ name: planet.name }}
+							className='pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wide'
 						>
 							{planet.name}
 						</Link>

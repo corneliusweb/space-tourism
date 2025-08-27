@@ -25,7 +25,10 @@ const Header = () => {
 						>
 							<img src={closeIcon} alt='close icon' />
 						</button>
-						<ul className='mt-18 text-xl grid gap-6'>
+						<ul
+							className='mt-18 text-xl grid gap-6'
+							onClick={() => setIsNavOpen(false)}
+						>
 							<li>
 								<span className='font-bold text-xl mr-3'>00</span>
 								<Link to='/'>HOME</Link>
