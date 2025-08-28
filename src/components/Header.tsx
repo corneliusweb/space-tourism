@@ -6,12 +6,15 @@ const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
 	return (
-		<header className='flex justify-between items-center p-8'>
+		<header className='flex justify-between items-center p-8 sm:p-0 sm:pt-12 sm:pl-12'>
 			<Link to='/'>
 				<img src={logo} alt='space tourism logo' />
 			</Link>
 
-			<button onClick={() => setIsNavOpen((prev) => !prev)}>
+			<button
+				onClick={() => setIsNavOpen((prev) => !prev)}
+				className='sm:hidden'
+			>
 				<img src={menuIcon} alt='hamburger icon' />
 			</button>
 
@@ -49,6 +52,62 @@ const Header = () => {
 					</div>
 				</nav>
 			)}
+
+			{/* Large screen nav */}
+			<span className='h-[0.5px] ml-15 -mr-10 z-1 grow bg-white/25 hidden lg:block'></span>
+
+			<nav className='hidden sm:block'>
+				<ul className='flex gap-8 bg-white/5 backdrop-blur-[80px] pl-30 pr-8'>
+					<li className='sm-link-lists'>
+						<Link
+							to='/'
+							className='sm-links'
+							activeProps={{
+								className: 'border-b-2',
+							}}
+						>
+							<span className='sm-link-num'>00</span>
+							HOME
+						</Link>
+					</li>
+					<li className='sm-link-lists'>
+						<Link
+							to='/destination'
+							className='sm-links'
+							activeProps={{
+								className: 'border-b-2',
+							}}
+						>
+							<span className='sm-link-num'>01</span>
+							DESTINATION
+						</Link>
+					</li>
+					<li className='sm-link-lists'>
+						<Link
+							to='/crew'
+							className='sm-links'
+							activeProps={{
+								className: 'border-b-2',
+							}}
+						>
+							<span className='sm-link-num'>02</span>
+							CREW
+						</Link>
+					</li>
+					<li className='sm-link-lists'>
+						<Link
+							to='/technology'
+							className='sm-links'
+							activeProps={{
+								className: 'border-b-2',
+							}}
+						>
+							<span className='sm-link-num'>03</span>
+							TECHNOLOGY
+						</Link>
+					</li>
+				</ul>
+			</nav>
 		</header>
 	);
 };

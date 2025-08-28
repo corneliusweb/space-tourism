@@ -56,7 +56,12 @@ function DestinationLayout() {
 							key={planet.name}
 							to='/destination/$name'
 							params={{ name: planet.name }}
-							className='pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300'
+							className={`pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300 ${
+								planetName === 'moon' && 'first-of-type:text-white first-of-type:border-b-2'
+							}`}
+							activeProps={{
+								className: 'text-white border-b-2',
+							}}
 						>
 							{planet.name}
 						</Link>

@@ -7,7 +7,6 @@
 @theme {
 	/* Reset breakpoints to match design */
 	--breakpoint-sm: 35em;
-	--breakpoint-md: 45em;
 
 	/* colors */
 	--color-dark-blue: hsl(230, 35%, 7%);
@@ -72,6 +71,18 @@
 
 	button {
 		cursor: pointer;
+	}
+}
+
+@layer components {
+	.sm-links {
+		@apply py-7 inline-block hover:border-b-2;
+	}
+	.sm-link-num {
+		@apply font-bold text-base mr-2;
+	}
+	.sm-link-lists {
+		@apply text-base font-sans-cond tracking-wide;
 	}
 }
 

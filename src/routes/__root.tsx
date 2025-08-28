@@ -3,9 +3,9 @@ import Header from '../components/Header';
 
 export const Route = createRootRoute({
 	component: () => (
-		<>
+		<div className='max-w-[1440px] mx-auto'>
 			<Header />
 			<Outlet />
-		</>
+		</div>
 	),
 });
