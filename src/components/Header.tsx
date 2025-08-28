@@ -6,21 +6,21 @@ const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
 	return (
-		<header className='flex justify-between items-center p-8 sm:p-0 sm:pt-12 sm:pl-12'>
+		<header className='flex justify-between items-center p-8 tablet:p-0 tablet:pr-10 tablet:pt-12 tablet:pl-12'>
 			<Link to='/'>
 				<img src={logo} alt='space tourism logo' />
 			</Link>
 
 			<button
 				onClick={() => setIsNavOpen((prev) => !prev)}
-				className='sm:hidden'
+				className='tablet:hidden'
 			>
 				<img src={menuIcon} alt='hamburger icon' />
 			</button>
 
 			{/* Mobile nav */}
 			{isNavOpen && (
-				<nav className=''>
+				<nav>
 					<div className='absolute right-0 top-0 w-3/5 bg-[#0B0D17]/80 h-screen p-8 backdrop-blur-[80px]'>
 						<button
 							className='float-right'
@@ -56,8 +56,8 @@ const Header = () => {
 			{/* Large screen nav */}
 			<span className='h-[0.5px] ml-15 -mr-10 z-1 grow bg-white/25 hidden lg:block'></span>
 
-			<nav className='hidden sm:block'>
-				<ul className='flex gap-8 bg-white/5 backdrop-blur-[80px] pl-30 pr-8'>
+			<nav className='hidden tablet:block'>
+				<ul className='flex gap-8 bg-white/5 backdrop-blur-[80px] pl-30 pr-8 sm:pl-10 lg:pl-20 xl:pl-38'>
 					<li className='sm-link-lists'>
 						<Link
 							to='/'
