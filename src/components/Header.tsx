@@ -6,7 +6,7 @@ const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
 	return (
-		<header className='flex justify-between items-center p-8 tablet:p-0 tablet:pr-10 tablet:pt-12 tablet:pl-12'>
+		<header className='flex justify-between items-center p-8 tablet:p-0 tablet:pl-10 lg:pr-10 lg:pt-12 lg:pl-12'>
 			<Link to='/'>
 				<img src={logo} alt='space tourism logo' />
 			</Link>

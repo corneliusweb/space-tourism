@@ -6,6 +6,7 @@ import {
 	useLocation,
 } from '@tanstack/react-router';
 import { destinations } from '../../constants/data';
+import PageHeading from '../../components/PageHeading';
 
 export const Route = createFileRoute('/destination')({
 	component: DestinationLayout,
@@ -34,12 +35,7 @@ function DestinationLayout() {
 
 	return (
 		<div className='text-center px-8'>
-			<p className='font-sans-cond uppercase flex justify-center gap-2'>
-				<span className='font-bold tracking-wider'>01</span>
-				<span className='text-base tracking-widest'>
-					Pick your destination
-				</span>
-			</p>
+			<PageHeading number='01' heading='Pick your destination' />
 
 			{planetName && (
 				<img
@@ -57,7 +53,8 @@ function DestinationLayout() {
 							to='/destination/$name'
 							params={{ name: planet.name }}
 							className={`pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300 ${
-								planetName === 'moon' && 'first-of-type:text-white first-of-type:border-b-2'
+								planetName === 'moon' &&
+								'first-of-type:text-white first-of-type:border-b-2'
 							}`}
 							activeProps={{
 								className: 'text-white border-b-2',
