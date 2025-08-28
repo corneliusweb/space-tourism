@@ -22,12 +22,12 @@ function DestinationPage() {
 			<p className='text-fs-00 tracking-tight text-blue-300'>{planet.description}</p>
 			<hr className='my-6 text-white/25' />
 			<p className='mb-6'>
-				<span className='text-blue-300 block text-sm uppercase tracking-wide font-sans-cond'>Avg. Distance</span>
-				<span className='text-3xl uppercase'>{planet.distance}</span>
+				<span className='text-blue-300 block text-sm uppercase tracking-wide font-sans-cond mb-1'>Avg. Distance</span>
+				<span className='text-3xl uppercase font-serif'>{planet.distance}</span>
 			</p>
 			<p className='mb-6'>
-				<span className='text-blue-300 block text-sm uppercase tracking-wide font-sans-cond'>Est. Travel time</span>
-				<span className='text-3xl uppercase'>{planet.travel}</span>
+				<span className='text-blue-300 block text-sm uppercase tracking-wide font-sans-cond mb-1'>Est. Travel time</span>
+				<span className='text-3xl uppercase font-serif'>{planet.travel}</span>
 			</p>
 		</section>
 	);

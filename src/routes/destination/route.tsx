@@ -1,6 +1,7 @@
 import {
 	createFileRoute,
 	Link,
+	Navigate,
 	Outlet,
 	useLocation,
 } from '@tanstack/react-router';
@@ -14,6 +15,16 @@ function DestinationLayout() {
 	const location = useLocation();
 	const planetName = location.pathname.split('/').at(2);
 	// const planetName = pathSplit[2];
+
+	// Only redirect if we're at exactly /destination
+	const isExactDestinationRoute = location.pathname === '/destination';
+
+	// If no planet is selected in /destination, redirect to moon
+	if (!planetName && isExactDestinationRoute) {
+		return (
+			<Navigate to='/destination/$name' params={{ name: 'moon' }} replace />
+		);
+	}
 
 	const planet = planetName
 		? destinations.find(
@@ -39,13 +50,13 @@ function DestinationLayout() {
 			)}
 
 			<main>
-				<nav className='flex justify-center gap-6 min-h-fit'>
+				<nav className='flex justify-center gap-8 min-h-fit'>
 					{destinations.map((planet) => (
 						<Link
 							key={planet.name}
 							to='/destination/$name'
 							params={{ name: planet.name }}
-							className='pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wide'
+							className='pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300'
 						>
 							{planet.name}
 						</Link>
