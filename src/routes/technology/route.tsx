@@ -1,4 +1,10 @@
-import { createFileRoute, Link, Outlet } from '@tanstack/react-router';
+import {
+	createFileRoute,
+	Link,
+	Navigate,
+	Outlet,
+	useLocation,
+} from '@tanstack/react-router';
 import { technologies } from '../../constants/data';
 
 export const Route = createFileRoute('/technology')({
@@ -6,8 +12,33 @@ export const Route = createFileRoute('/technology')({
 });
 
 function TechnologyLayout() {
+	const location = useLocation();
+	const techName = location.pathname.split('/').at(2);
+
+	const isExactTechRoute = location.pathname === '/technology';
+
+   // navigate to the first tech 
+	if (!techName && isExactTechRoute) {
+		return (
+			<Navigate
+				to='/technology/$technology'
+				params={{ technology: technologies[0].id }}
+			/>
+		);
+	}
+
+	const tech = techName
+		? technologies.find((t) => t.id === techName)
+		: undefined;
+	if (!tech) return <p>Technology not found</p>;
+
 	return (
 		<main>
+			<section>
+				<div>
+					<img src={tech.images.portrait} alt={tech.name} />
+				</div>
+			</section>
 			<section>
 				<nav>
 					<ul>
