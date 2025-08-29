@@ -8,16 +8,25 @@ export const Route = createFileRoute('/crew')({
 
 function Crew() {
 	return (
-		<main>
-			<PageHeading number='02' heading='Meet your crew' />
-			<section>
+		<main className='mt-20'>
+			<div className='flex'>
+				<PageHeading number='02' heading='Meet your crew' />
+			</div>
+			<section className='w-lg mx-auto text-center'>
 				<Outlet />
 				<nav>
-					<ul>
+					<ul className='flex gap-5 justify-center'>
 						{crews.map((crew) => (
 							<li>
-								<Link to='/crew/$crew' params={{ crew: crew.name }}>
-									.
+								<Link
+									to='/crew/$crew'
+									params={{ crew: crew.id }}
+									className={`font-bold text-6xl text-white/17 inline-block`}
+									activeProps={{
+										className: 'text-white/100',
+									}}
+								>
+									. <span className='sr-only'>{crew.name}</span>
 								</Link>
 							</li>
 						))}
