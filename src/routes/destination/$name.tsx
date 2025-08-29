@@ -21,8 +21,7 @@ function DestinationPage() {
 	return (
 		<section className=''>
 			<h2 className='my-4 text-fs-800 uppercase font-serif'>
-				{' '}
-				{planet.name}{' '}
+				{planet.name}
 			</h2>
 			<p className='text-fs-00 tracking-tight text-blue-300'>
 				{planet.description}
@@ -51,7 +50,7 @@ function DestinationPage() {
 function CustomError({ error }: { error: Error }) {
 	return (
 		<section className='text-center flex items-center justify-center py-12 fixed h-screen bg-dark-blue left-0 top-0 w-full z-5'>
-			<div className=''>
+			<div>
 				<h2 className='text-fs-700 uppercase font-bold font-serif text-red-400 mb-4'>
 					Hold on! <br /> We Have a Problem💔
 				</h2>
