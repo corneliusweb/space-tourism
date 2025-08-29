@@ -15,15 +15,18 @@ export const Route = createFileRoute('/destination')({
 function DestinationLayout() {
 	const location = useLocation();
 	const planetName = location.pathname.split('/').at(2);
-	// const planetName = pathSplit[2];
 
 	// Only redirect if we're at exactly /destination
 	const isExactDestinationRoute = location.pathname === '/destination';
 
-	// If no planet is selected in /destination, redirect to moon
+	// If no planet is selected in /destination, redirect to the first destination
 	if (!planetName && isExactDestinationRoute) {
 		return (
-			<Navigate to='/destination/$name' params={{ name: 'moon' }} replace />
+			<Navigate
+				to='/destination/$name'
+				params={{ name: destinations[0].name }}
+				replace
+			/>
 		);
 	}
 
@@ -34,7 +37,7 @@ function DestinationLayout() {
 		: undefined;
 
 	return (
-		<div className='text-center px-8'>
+		<div className='text-center px-8 pt-16'>
 			<PageHeading number='01' heading='Pick your destination' />
 
 			{planetName && (
