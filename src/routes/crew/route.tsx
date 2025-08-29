@@ -1,4 +1,10 @@
-import { createFileRoute, Link, Outlet } from '@tanstack/react-router';
+import {
+	createFileRoute,
+	Link,
+	Navigate,
+	Outlet,
+	useLocation,
+} from '@tanstack/react-router';
 import PageHeading from '../../components/PageHeading';
 import { crews } from '../../constants/data';
 
@@ -7,6 +13,18 @@ export const Route = createFileRoute('/crew')({
 });
 
 function Crew() {
+	const location = useLocation();
+	const crewName = location.pathname.split('/').at(2);
+
+	const isExactCrewRoute = location.pathname === '/crew';
+
+	// navigate to the page at the index 0 if we're at /crew
+	if (!crewName && isExactCrewRoute) {
+		return (
+			<Navigate to='/crew/$crew' params={{ crew: crews[0].id }} replace />
+		);
+	}
+
 	return (
 		<main className='mt-20'>
 			<div className='flex'>
@@ -17,7 +35,7 @@ function Crew() {
 				<nav>
 					<ul className='flex gap-5 justify-center'>
 						{crews.map((crew) => (
-							<li>
+							<li key={crew.id}>
 								<Link
 									to='/crew/$crew'
 									params={{ crew: crew.id }}
