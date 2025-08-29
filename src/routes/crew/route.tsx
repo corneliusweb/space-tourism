@@ -25,6 +25,13 @@ function Crew() {
 		);
 	}
 
+	// find the crew member with the id from the url
+	const crew = crewName
+		? crews.find((crew) => crew.id === crewName)
+		: undefined;
+
+	if (!crew) return <p>Crew member not found!</p>;
+
 	return (
 		<main className='mt-20'>
 			<div className='flex'>
@@ -50,6 +57,11 @@ function Crew() {
 						))}
 					</ul>
 				</nav>
+			</section>
+			<section>
+				<div>
+					<img src={crew.image} alt={crew.name} />
+				</div>
 			</section>
 		</main>
 	);
