@@ -7,12 +7,21 @@ import {
 } from '@tanstack/react-router';
 import { destinations } from '../../constants/data';
 import PageHeading from '../../components/PageHeading';
+import { bgMobile, bgDesktop, bgTablet } from '../../assets/destination';
+import { useBodyBackground } from '../../constants/useBodyBackground';
 
 export const Route = createFileRoute('/destination')({
 	component: DestinationLayout,
 });
 
 function DestinationLayout() {
+	// background image handling
+	useBodyBackground({
+		mobile: bgMobile,
+		tablet: bgTablet,
+		desktop: bgDesktop,
+	});
+
 	const location = useLocation();
 	const planetName = location.pathname.split('/').at(2);
 

@@ -6,12 +6,23 @@ import {
 	useLocation,
 } from '@tanstack/react-router';
 import { technologies } from '../../constants/data';
+import { bgDesktop } from '../../assets/technology';
+import { bgTablet } from '../../assets/technology';
+import { bgMobile } from '../../assets/technology';
+import { useBodyBackground } from '../../constants/useBodyBackground';
 
 export const Route = createFileRoute('/technology')({
 	component: TechnologyLayout,
 });
 
 function TechnologyLayout() {
+	// background image handling
+	useBodyBackground({
+		mobile: bgMobile,
+		tablet: bgTablet,
+		desktop: bgDesktop,
+	});
+
 	const location = useLocation();
 	const techName = location.pathname.split('/').at(2);
 
