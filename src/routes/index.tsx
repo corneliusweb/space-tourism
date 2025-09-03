@@ -1,10 +1,18 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
+import { useBodyBackground } from '../constants/useBodyBackground';
+import { bgDesktop, bgMobile, bgTablet } from '../assets/home';
 
 export const Route = createFileRoute('/')({
 	component: Index,
 });
 
 function Index() {
+	useBodyBackground({
+		mobile: bgMobile,
+		tablet: bgTablet,
+		desktop: bgDesktop,
+	});
+	
 	return (
 		<section className='sm:mt-20 lg:flex lg:items-end lg:justify-center lg:mt-0 lg:h-99'>
 			<div className='lg:flex lg:justify-between lg:items-center h-full w-full lg:px-35'>

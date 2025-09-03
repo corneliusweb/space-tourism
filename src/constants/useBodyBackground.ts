@@ -8,26 +8,41 @@ interface ResponsiveBackground {
 
 export const useBodyBackground = (backgrounds: ResponsiveBackground) => {
 	useEffect(() => {
-		document.documentElement.style.setProperty(
-			'--bg-mobile',
-			`url(${backgrounds.mobile})`
-		);
-		document.documentElement.style.setProperty(
-			'--tablet',
-			`url(${backgrounds.tablet})`
-		);
-		document.documentElement.style.setProperty(
-			'--desktop',
-			`url(${backgrounds.desktop})`
-		);
+		// update background at breakpoints
+		const updateBackground = () => {
+			const width = window.innerWidth;
+			let backgroundImg;
 
-		document.body.classList.add('page-background');
+			if (width >= 1024) {
+				backgroundImg = backgrounds.desktop;
+			} else if (width >= 640) {
+				backgroundImg = backgrounds.tablet;
+			} else {
+				backgroundImg = backgrounds.mobile;
+			}
 
+			document.body.style.backgroundImage = `url(${backgroundImg})`;
+			document.body.style.backgroundSize = 'cover';
+			document.body.style.backgroundPosition = 'center';
+			document.body.style.backgroundRepeat = 'no-repeat';
+			document.body.style.minHeight = '100vh';
+		};
+
+		// update background when component mounts
+		updateBackground();
+
+		// listen for window resize
+		window.addEventListener('resize', updateBackground);
+
+		// cleanup on unmount
 		return () => {
+			window.removeEventListener('resize', updateBackground);
 			document.body.classList.remove('page-background');
-			document.documentElement.style.removeProperty('--bg-mobile');
-			document.documentElement.style.removeProperty('--bg-tablet');
-			document.documentElement.style.removeProperty('--bg-desktop');
+			document.body.style.backgroundImage = ``;
+			document.body.style.backgroundSize = '';
+			document.body.style.backgroundPosition = '';
+			document.body.style.backgroundRepeat = '';
+			document.body.style.minHeight = '';
 		};
 	}, [backgrounds.mobile, backgrounds.tablet, backgrounds.desktop]);
 };
