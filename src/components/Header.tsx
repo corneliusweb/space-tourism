@@ -5,6 +5,15 @@ import { useState } from 'react';
 const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
+	const disableScroll = () => {
+		if (isNavOpen) {
+			document.body.style.overflowY = 'hidden';
+		} else {
+			document.body.style.overflowY = 'auto';
+		}
+	};
+	disableScroll();
+
 	return (
 		<header className='flex justify-between items-center p-8 tablet:p-0 tablet:pl-10 lg:pr-10 lg:pt-12 lg:pl-12'>
 			<Link to='/'>
