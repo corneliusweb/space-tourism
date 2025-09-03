@@ -25,7 +25,6 @@ function DestinationLayout() {
 			<Navigate
 				to='/destination/$name'
 				params={{ name: destinations[0].name }}
-				replace
 			/>
 		);
 	}
@@ -35,20 +34,21 @@ function DestinationLayout() {
 				(p) => p.name.toLowerCase() === planetName.toLowerCase()
 		  )
 		: undefined;
+	if (!planet) return <p>Destination not found</p>;
 
 	return (
-		<div className='text-center px-8 pt-16'>
+		<>
 			<PageHeading number='01' heading='Pick your destination' />
 
 			{planetName && (
 				<img
-					src={planet?.image}
-					alt={planet?.name}
+					src={planet.image}
+					alt={planet.name}
 					className='w-37.5 mx-auto my-12'
 				/>
 			)}
 
-			<main>
+			<section>
 				<nav className='flex justify-center gap-8 min-h-fit'>
 					{destinations.map((planet) => (
 						<Link
@@ -68,7 +68,7 @@ function DestinationLayout() {
 					))}
 				</nav>
 				<Outlet />
-			</main>
-		</div>
+			</section>
+		</>
 	);
 }

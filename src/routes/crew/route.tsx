@@ -21,7 +21,7 @@ function Crew() {
 	// navigate to the page at the index 0 if we're at /crew
 	if (!crewName && isExactCrewRoute) {
 		return (
-			<Navigate to='/crew/$crew' params={{ crew: crews[0].id }} replace />
+			<Navigate to='/crew/$crew' params={{ crew: crews[0].id }} />
 		);
 	}
 
@@ -33,7 +33,7 @@ function Crew() {
 	if (!crew) return <p>Crew member not found!</p>;
 
 	return (
-		<main className='mt-20'>
+		<>
 			<div className='flex'>
 				<PageHeading number='02' heading='Meet your crew' />
 			</div>
@@ -63,6 +63,6 @@ function Crew() {
 					<img src={crew.image} alt={crew.name} />
 				</div>
 			</section>
-		</main>
+		</>
 	);
 }

@@ -17,7 +17,7 @@ function TechnologyLayout() {
 
 	const isExactTechRoute = location.pathname === '/technology';
 
-   // navigate to the first tech 
+	// navigate to the first tech
 	if (!techName && isExactTechRoute) {
 		return (
 			<Navigate
@@ -33,7 +33,7 @@ function TechnologyLayout() {
 	if (!tech) return <p>Technology not found</p>;
 
 	return (
-		<main>
+		<>
 			<section>
 				<div>
 					<img src={tech.images.portrait} alt={tech.name} />
@@ -41,7 +41,7 @@ function TechnologyLayout() {
 			</section>
 			<section>
 				<nav>
-					<ul>
+					<ul className='flex '>
 						{technologies.map((tech, index) => (
 							<li key={tech.id}>
 								<Link
@@ -49,6 +49,7 @@ function TechnologyLayout() {
 									params={{ technology: tech.id }}
 								>
 									{index + 1}
+									<span className='sr-only'>{tech.name}</span>
 								</Link>
 							</li>
 						))}
@@ -56,6 +57,6 @@ function TechnologyLayout() {
 				</nav>
 				<Outlet />
 			</section>
-		</main>
+		</>
 	);
 }

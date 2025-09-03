@@ -6,16 +6,18 @@ export const Route = createFileRoute('/')({
 
 function Index() {
 	return (
-		<main className='sm:mt-20'>
-			<section>
-				<div className='w-85 mx-auto sm:w-lg'>
-					<h1 className='text-center uppercase'>
+		<section className='sm:mt-20 lg:flex lg:items-end lg:justify-center lg:mt-0 lg:h-99'>
+			<div className='lg:flex lg:justify-between lg:items-center h-full w-full lg:px-35'>
+				<div className='w-85 mx-auto sm:w-lg lg:mx-0'>
+					<h1 className='text-center uppercase lg:text-left'>
 						<span className='font-sans-cond tracking-widest text-base text-blue-300 sm:text-md-500'>
 							So, you want to travel to
 						</span>
-						<span className='font-serif text-fs-900 block my-5 tablet:text-9xl'>Space</span>
+						<span className='font-serif text-fs-900 block my-5 tablet:text-9xl'>
+							Space
+						</span>
 					</h1>
-					<p className='text-center text-fs-400 mx-auto text-blue-300 leading-[180%] tracking-wide'>
+					<p className='text-center text-fs-400 mx-auto text-blue-300 leading-[180%] tracking-wide  lg:text-left'>
 						Let's face it; if you want to go to space, you might as well
 						genuinely go to outer space and not hover kind of on the edge
 						of it. Well sit back, and relax because we'll give you a truly
@@ -23,7 +25,7 @@ function Index() {
 					</p>
 				</div>
 
-				<div className='py-25'>
+				<div className='py-25 lg:p-0 lg:w-90 lg:h-90  lg:flex lg:items-center lg:justify-center lg:hover:bg-white/10 lg:hover:backdrop-blur-[80px] lg:hover:rounded-full lg:hover:w-90 lg:hover:h-90transition-all duration-300'>
 					<Link
 						to='/destination'
 						className='font-serif text-lg mx-auto flex uppercase w-36 h-36 rounded-full items-center justify-center bg-white text-black tracking-widest tablet:w-68 tablet:h-68'
@@ -31,7 +33,7 @@ function Index() {
 						Explore
 					</Link>
 				</div>
-			</section>
-		</main>
+			</div>
+		</section>
 	);
 }
