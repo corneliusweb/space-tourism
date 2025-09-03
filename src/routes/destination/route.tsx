@@ -48,36 +48,39 @@ function DestinationLayout() {
 	return (
 		<>
 			<PageHeading number='01' heading='Pick your destination' />
+			<div className='lg:max-w-planet-content-lg lg:flex lg:items-center lg:my-35 lg:gap-25 lg:px-20 xl:px-40'>
+				{planetName && (
+					<img
+						src={planet.image}
+						alt={planet.name}
+						className='w-37.5 mx-auto my-18 tablet:w-planet-img-md lg:my-0 xl:w-planet-img-lg'
+					/>
+				)}
 
-			{planetName && (
-				<img
-					src={planet.image}
-					alt={planet.name}
-					className='w-37.5 mx-auto my-12'
-				/>
-			)}
-
-			<section>
-				<nav className='flex justify-center gap-8 min-h-fit'>
-					{destinations.map((planet) => (
-						<Link
-							key={planet.name}
-							to='/destination/$name'
-							params={{ name: planet.name }}
-							className={`pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300 ${
-								planetName === 'moon' &&
-								'first-of-type:text-white first-of-type:border-b-2'
-							}`}
-							activeProps={{
-								className: 'text-white border-b-2',
-							}}
-						>
-							{planet.name}
-						</Link>
-					))}
-				</nav>
-				<Outlet />
-			</section>
+				<section className='lg:w-section-p-lg'>
+					<nav className='flex justify-center gap-8 min-h-fit lg:justify-start'>
+						{destinations.map((planet) => (
+							<Link
+								key={planet.name}
+								to='/destination/$name'
+								params={{ name: planet.name }}
+								className={`pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300 ${
+									planetName === 'moon' &&
+									'first-of-type:text-white first-of-type:border-b-2'
+								}`}
+								activeProps={{
+									className: 'text-white border-b-2',
+								}}
+							>
+								{planet.name}
+							</Link>
+						))}
+					</nav>
+					<div className='text-center px-8 tablet:px-32 lg:px-0 lg:text-left'>
+						<Outlet />
+					</div>
+				</section>
+			</div>
 		</>
 	);
 }

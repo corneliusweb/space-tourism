@@ -36,6 +36,15 @@
 	--text-md-500: 1.75rem;
 	--text-md-400: 1.125rem;
 
+	/* planet widths */
+	--width-planet-img-lg: 30rem;
+	--width-planet-img-md: 18.75rem;
+	--width-planet-content-lg: 69.375rem;
+	--width-planet-content-md: 43rem;
+
+	/* planet padding */
+	--width-section-p-lg: 27.813rem;
+
 	/* font-families */
 	--font-serif: 'Bellefair', serif;
 	--font-sans-cond: 'Barlow Condensed', sans-serif;
