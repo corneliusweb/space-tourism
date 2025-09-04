@@ -73,7 +73,7 @@ Your users should be able to:
 
    ```bash
    git clone https://github.com/corneliusweb/space-tourism.git
-   cd sneakers
+   cd space-tourism
    ```
 
 2. Install dependencies:
@@ -122,7 +122,6 @@ In the project directory, you can run:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
@@ -135,11 +134,11 @@ In the project directory, you can run:
 
 I learned a better way to handle dynamic backgrounds in an application.
 I practiced, and learned a lot of tanstack routing techniques while working on this project.
-Also, it created another avenue to work with TypeScript, and get familiar.
+Also, it created an avenue for me to work with TypeScript, and get more familiar.
 
 ### Continued development
-I look forward to using SEO tools like ZHead & UnHead to better present the pages.
-Massive application of tooltips is being considered.
+I look forward to implementing SEO by using tools like ZHead & UnHead to better present the project.
+Massive implementation of tooltips is being considered.
 
 
 ### Useful resources
