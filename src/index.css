@@ -39,6 +39,7 @@
 	/* tech widths */
 	--width-tech-textbox-lg: 39.688rem;
 	--width-tech-content-lg: 79.688rem;
+	--width-tech-content-md: 43rem;
 	--width-tech-img-lg: 38rem;
 
 	/* tech heights */
@@ -48,7 +49,9 @@
 	/* crew widths */
 	--width-crew-img: 16.953rem;
 	--width-crew-img-md: 27.925rem;
+	--width-crew-img-lg: 33.705rem;
 	--width-crew-content-lg: 69.375rem;
+	--width-crew-content-md: 43rem;
 	--width-crew-textbox-lg: 33.688rem;
 
 	/* crew height */

@@ -22,7 +22,7 @@ function CrewMember() {
 			<h2 className='uppercase tracking-wide font-serif text-fs-700 tablet:text-sm-700 lg:text-fs-800 lg:tracking-normal'>
 				{crew.name}
 			</h2>
-			<p className='text-fs-400 leading-7 font-sans mt-4 tablet:text-base lg:text-lg lg:leading-9 text-blue-300'>
+			<p className='text-fs-400 tracking-wide leading-7 font-sans mt-4 text-blue-300 tablet:text-base lg:text-lg lg:leading-9'>
 				{crew.bio}
 			</p>
 		</>
