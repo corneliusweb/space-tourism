@@ -58,6 +58,9 @@ function Crew() {
 	};
 
 	const handleTouchEnd = () => {
+		const width = window.innerWidth;
+		if (width >= 860) return; // prevent swipe nav on larger screens
+
 		if (!touchStartX.current || !touchEndX.current) return;
 
 		const distance = touchStartX.current - touchEndX.current;
@@ -78,18 +81,18 @@ function Crew() {
 	};
 
 	return (
-		<div
-			className='tablet:w-crew-content-md lg:w-4xl xl:w-crew-content-lg tablet:mx-auto'
-			onTouchStart={handleTouchStart}
-			onTouchMove={handleTouchMove}
-			onTouchEnd={handleTouchEnd}
-		>
+		<div className='tablet:w-crew-content-md lg:w-4xl xl:w-crew-content-lg tablet:mx-auto'>
 			<PageHeading number='02' heading='Meet your crew' />
 
 			<div className='mt-18 lg:flex lg:items-center lg:justify-between lg:min-h-crew-textbox-lg lg:relative lg:gap-5 lg:mt-0'>
 				<section className='text-center px-4 tablet:px-0 tablet:w-lg tablet:mx-auto lg:text-left lg:mx-0 lg:w-crew-textbox-lg'>
 					<Outlet />
-					<nav className='mb-11 mt-4 lg:absolute lg:left-0 lg:bottom-0'>
+					<nav
+						className='mb-11 mt-4 lg:absolute lg:left-0 lg:bottom-0'
+						onTouchStart={handleTouchStart}
+						onTouchMove={handleTouchMove}
+						onTouchEnd={handleTouchEnd}
+					>
 						<ul className='flex gap-5 justify-center items-center lg:justify-start'>
 							{crews.map((crew) => (
 								<li key={crew.id}>

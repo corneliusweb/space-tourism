@@ -28,6 +28,7 @@ Your users should be able to:
 - View each page and be able to toggle between the tabs to see new information
 
 ### Extra Features
+- Swipe navigation enabled for mobile & tablet screens in Crew page.
 - Used tanstack router to handle the dynamic rendering of sub-page contents.
 - Each sub-page is sharable, can be bookmarked, and persists on page refresh/reload.
 - Fully responsive across all screen sizes.
