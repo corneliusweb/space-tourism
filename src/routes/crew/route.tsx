@@ -4,11 +4,13 @@ import {
 	Navigate,
 	Outlet,
 	useLocation,
+	useNavigate,
 } from '@tanstack/react-router';
 import PageHeading from '../../components/PageHeading';
 import { crews } from '../../constants/data';
 import { bgMobile, bgDesktop, bgTablet } from '../../assets/crew/index';
 import { useBodyBackground } from '../../constants/useBodyBackground';
+import { useRef } from 'react';
 
 export const Route = createFileRoute('/crew')({
 	component: Crew,
@@ -23,8 +25,13 @@ function Crew() {
 	});
 
 	const location = useLocation();
+	const navigate = useNavigate();
 	const crewName = location.pathname.split('/').at(2);
 	const isExactCrewRoute = location.pathname === '/crew';
+
+	// Swipe handling refs
+	const touchStartX = useRef<number>(0);
+	const touchEndX = useRef<number>(0);
 
 	// navigate to the page at the index 0 if we're at /crew
 	if (!crewName && isExactCrewRoute) {
@@ -38,8 +45,45 @@ function Crew() {
 
 	if (!crew) return <p>Crew member not found!</p>;
 
+	// Find current crew index for navigation
+	const currentIndex = crews.findIndex((c) => c.id === crew.id);
+
+	// Swipe handlers
+	const handleTouchStart = (e: React.TouchEvent) => {
+		touchStartX.current = e.targetTouches[0].clientX;
+	};
+
+	const handleTouchMove = (e: React.TouchEvent) => {
+		touchEndX.current = e.targetTouches[0].clientX;
+	};
+
+	const handleTouchEnd = () => {
+		if (!touchStartX.current || !touchEndX.current) return;
+
+		const distance = touchStartX.current - touchEndX.current;
+		const isLeftSwipe = distance > 50;
+		const isRightSwipe = distance < -50;
+
+		if (isLeftSwipe && currentIndex < crews.length - 1) {
+			// Swipe left - go to next crew member
+			const nextCrew = crews[currentIndex + 1];
+			navigate({ to: '/crew/$crew', params: { crew: nextCrew.id } });
+		}
+
+		if (isRightSwipe && currentIndex > 0) {
+			// Swipe right - go to previous crew member
+			const prevCrew = crews[currentIndex - 1];
+			navigate({ to: '/crew/$crew', params: { crew: prevCrew.id } });
+		}
+	};
+
 	return (
-		<div className='tablet:w-crew-content-md lg:w-4xl xl:w-crew-content-lg tablet:mx-auto'>
+		<div
+			className='tablet:w-crew-content-md lg:w-4xl xl:w-crew-content-lg tablet:mx-auto'
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}
+			onTouchEnd={handleTouchEnd}
+		>
 			<PageHeading number='02' heading='Meet your crew' />
 
 			<div className='mt-18 lg:flex lg:items-center lg:justify-between lg:min-h-crew-textbox-lg lg:relative lg:gap-5 lg:mt-0'>
