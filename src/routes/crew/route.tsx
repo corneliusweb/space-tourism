@@ -39,7 +39,7 @@ function Crew() {
 	if (!crew) return <p>Crew member not found!</p>;
 
 	return (
-		<div className='tablet:w-crew-content-md lg:w-crew-content-lg tablet:mx-auto'>
+		<div className='tablet:w-crew-content-md lg:w-4xl xl:w-crew-content-lg tablet:mx-auto'>
 			<PageHeading number='02' heading='Meet your crew' />
 
 			<div className='mt-18 lg:flex lg:items-center lg:justify-between lg:min-h-crew-textbox-lg lg:relative lg:gap-5 lg:mt-0'>
@@ -52,7 +52,7 @@ function Crew() {
 									<Link
 										to='/crew/$crew'
 										params={{ crew: crew.id }}
-										className={`font-bold text-6xl text-white/17 inline-block hover:text-white/80 lg:text-8xl`}
+										className={`font-bold text-6xl text-white/17 inline-block hover:text-white/80 tablet:text-7xl`}
 										activeProps={{
 											className: 'text-white/100',
 										}}
@@ -68,7 +68,7 @@ function Crew() {
 				<img
 					src={crew.image}
 					alt={crew.name}
-					className='w-crew-img mx-auto tablet:w-crew-img-md lg:w-crew-img-lg'
+					className='w-crew-img mx-auto tablet:w-crew-img-md xl:w-crew-img-lg'
 				/>
 			</div>
 		</div>

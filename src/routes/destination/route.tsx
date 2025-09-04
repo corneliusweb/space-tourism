@@ -46,7 +46,7 @@ function DestinationLayout() {
 	if (!planet) return <p>Destination not found</p>;
 
 	return (
-		<div className='tablet:w-planet-content-md tablet:mx-auto lg:w-planet-content-lg'>
+		<div className='tablet:w-planet-content-md tablet:mx-auto lg:w-4xl xl:w-planet-content-lg'>
 			<PageHeading number='01' heading='Pick your destination' />
 			<div className='lg:max-w-planet-content-lg lg:flex lg:items-center lg:my-35 lg:gap-25'>
 				{planetName && (

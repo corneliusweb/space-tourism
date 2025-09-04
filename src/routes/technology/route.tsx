@@ -42,32 +42,25 @@ function TechnologyLayout() {
 		: undefined;
 	if (!tech) return <p>Technology not found</p>;
 
-	const handleTechImage = () => {
-		let techImage;
-		const width = window.innerWidth;
-
-		if (width >= 640 && width < 1024) {
-			techImage = tech.images.landscape;
-		} else {
-			techImage = tech.images.portrait;
-		}
-
-		return techImage;
-	};
-
 	return (
 		<>
-			<div className='tablet:w-crew-content-md tablet:mx-auto lg:w-tech-content-lg lg:float-right'>
+			<div className='tablet:w-crew-content-md tablet:mx-auto lg:w-4xl xl:w-tech-content-lg xl:float-right'>
 				<PageHeading number='03' heading='Space Launch 101' />
 			</div>
-			<div className='my-16 lg:flex lg:flex-row-reverse lg:items-center lg:w-tech-content-lg lg:float-right lg:gap-10'>
-				<img
-					src={handleTechImage()}
-					alt={tech.name}
-					className='tablet:h-tech-img-md lg:h-tech-img-lg lg:w-tech-img-lg'
-				/>
+			<div className='my-16 lg:flex lg:flex-row-reverse lg:items-center xl:w-tech-content-lg lg:float-right lg:gap-10'>
+				<picture>
+					<source
+						media='(min-width: 640px) and (max-width: 1023px)'
+						srcSet={tech.images.landscape}
+					/>
+					<img
+						src={tech.images.portrait}
+						alt={tech.name}
+						className='w-full tablet:h-tech-img-md xl:h-tech-img-lg xl:w-tech-img-lg'
+					/>
+				</picture>
 
-				<section className='text-center px-4 tablet:px-0 lg:flex lg:text-left lg:gap-15 lg:w-tech-textbox-lg'>
+				<section className='text-center px-4 tablet:px-0 lg:flex lg:text-left lg:gap-15 lg:pl-8 xl:pl-0 xl:w-tech-textbox-lg'>
 					<nav>
 						<ul className='flex space-x-7 justify-center py-8 pb-10 lg:flex-col lg:items-center lg:space-x-0 lg:py-0 lg:pb-0 lg:justify-between lg:h-full'>
 							{technologies.map((tech, index) => (
