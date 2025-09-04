@@ -12,7 +12,7 @@ function Index() {
 		tablet: bgTablet,
 		desktop: bgDesktop,
 	});
-	
+
 	return (
 		<section className='sm:mt-20 lg:flex lg:items-end lg:justify-center lg:mt-0 lg:h-99'>
 			<div className='lg:flex lg:justify-between lg:items-center h-full w-full lg:px-35'>
@@ -33,7 +33,7 @@ function Index() {
 					</p>
 				</div>
 
-				<div className='py-25 lg:p-0 lg:w-90 lg:h-90  lg:flex lg:items-center lg:justify-center lg:hover:bg-white/10 lg:hover:backdrop-blur-[80px] lg:hover:rounded-full lg:hover:w-90 lg:hover:h-90transition-all duration-300'>
+				<div className=' py-25 lg:p-0 lg:w-90 lg:h-90 lg:flex lg:items-center lg:justify-center transition-all duration-300 lg:hover:rounded-full lg:hover:bg-white/10 lg:hover:backdrop-blur-[1px]'>
 					<Link
 						to='/destination'
 						className='font-serif text-lg mx-auto flex uppercase w-36 h-36 rounded-full items-center justify-center bg-white text-black tracking-widest tablet:w-68 tablet:h-68'
