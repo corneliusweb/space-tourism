@@ -36,11 +36,22 @@
 	--text-md-500: 1.75rem;
 	--text-md-400: 1.125rem;
 
+	/* tech widths */
+	--width-tech-textbox-lg: 39.688rem;
+	--width-tech-content-lg: 79.688rem;
+	--width-tech-img-lg: 38rem;
+
+	/* tech height */
+	--height-tech-img-md: 22.313rem;
+	--height-tech-img-lg: 37.5rem;
+
 	/* crew widths */
 	--width-crew-img: 16.953rem;
 	--width-crew-img-md: 27.925rem;
 	--width-crew-content-lg: 69.375rem;
 	--width-crew-textbox-lg: 33.688rem;
+
+	/* crew height */
 	--height-crew-textbox-lg: 45.875rem;
 
 	/* planet widths */
