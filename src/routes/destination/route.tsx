@@ -46,9 +46,9 @@ function DestinationLayout() {
 	if (!planet) return <p>Destination not found</p>;
 
 	return (
-		<>
+		<div className='tablet:w-planet-content-md tablet:mx-auto lg:w-planet-content-lg'>
 			<PageHeading number='01' heading='Pick your destination' />
-			<div className='lg:max-w-planet-content-lg lg:flex lg:items-center lg:my-35 lg:gap-25 lg:px-20 xl:px-40'>
+			<div className='lg:max-w-planet-content-lg lg:flex lg:items-center lg:my-35 lg:gap-25'>
 				{planetName && (
 					<img
 						src={planet.image}
@@ -57,14 +57,14 @@ function DestinationLayout() {
 					/>
 				)}
 
-				<section className='lg:w-section-p-lg'>
+				<section className='tablet:w-planet-textbox-md tablet:mx-auto'>
 					<nav className='flex justify-center gap-8 min-h-fit lg:justify-start'>
 						{destinations.map((planet) => (
 							<Link
 								key={planet.name}
 								to='/destination/$name'
 								params={{ name: planet.name }}
-								className={`pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300 ${
+								className={`pb-4 hover:border-b-2 font-sans-cond uppercase tracking-wider text-blue-300 text-sm tablet:text-base ${
 									planetName === 'moon' &&
 									'first-of-type:text-white first-of-type:border-b-2'
 								}`}
@@ -76,11 +76,11 @@ function DestinationLayout() {
 							</Link>
 						))}
 					</nav>
-					<div className='text-center px-8 tablet:px-32 lg:px-0 lg:text-left'>
+					<div className='text-center px-8 tablet:px-0 lg:text-left'>
 						<Outlet />
 					</div>
 				</section>
 			</div>
-		</>
+		</div>
 	);
 }

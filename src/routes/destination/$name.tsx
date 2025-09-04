@@ -20,15 +20,15 @@ function DestinationPage() {
 
 	return (
 		<>
-			<h2 className='my-4 text-fs-800 uppercase font-serif'>
+			<h2 className='my-4 text-fs-800 uppercase font-serif tablet:text-sm-800 lg:text-8xl'>
 				{planet.name}
 			</h2>
-			<p className='text-fs-400 tracking-normal leading-6 text-blue-300 tablet:leading-9'>
+			<p className='text-fs-400 tracking-normal leading-6 text-blue-300 tablet:leading-9 tablet:text-base lg:text-lg'>
 				{planet.description}
 			</p>
 			<hr className='my-8 text-white/25' />
-			<div className='tablet:flex tablet:justify-between tablet:px-11'>
-				<p className='mb-6'>
+			<div className='tablet:flex tablet:gap-3'>
+				<p className='grow mb-6 tablet:mb-0'>
 					<span className='text-blue-300 block text-sm uppercase tracking-wide font-sans-cond mb-1'>
 						Avg. Distance
 					</span>
@@ -36,7 +36,7 @@ function DestinationPage() {
 						{planet.distance}
 					</span>
 				</p>
-				<p className='mb-6'>
+				<p className='grow mb-6 tablet:mb-0'>
 					<span className='text-blue-300 block text-sm uppercase tracking-wide font-sans-cond mb-1'>
 						Est. Travel time
 					</span>
