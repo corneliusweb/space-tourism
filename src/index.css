@@ -18,35 +18,29 @@
 	--text-fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
 	--text-fs-800: 3.5rem;
 	--text-fs-700: 1.5rem;
-	--text-fs-600: 1rem;
-	--text-fs-500: 1rem;
 	--text-fs-400: 0.9375rem;
-	--text-fs-300: 1rem;
 	--text-fs-200: 0.875rem;
 
 	--text-sm-800: 5rem;
 	--text-sm-700: 2.5rem;
-	--text-sm-600: 1.5rem;
-	--text-sm-500: 1.25rem;
-	--text-sm-400: 1rem;
 
-	--text-md-800: 6.25rem;
 	--text-md-700: 3.5rem;
 	--text-md-600: 2rem;
 	--text-md-500: 1.75rem;
-	--text-md-400: 1.125rem;
 
-	/* tech widths */
+	/* home customs */
+	--height-home-content-lg: 39.5rem;
+
+	/* tech customs */
 	--width-tech-textbox-lg: 39.688rem;
 	--width-tech-content-lg: 79.688rem;
 	--width-tech-content-md: 43rem;
 	--width-tech-img-lg: 38rem;
 
-	/* tech heights */
 	--height-tech-img-md: 22.313rem;
 	--height-tech-img-lg: 37.5rem;
 
-	/* crew widths */
+	/* crew customs */
 	--width-crew-img: 16.953rem;
 	--width-crew-img-md: 27.925rem;
 	--width-crew-img-lg: 33.705rem;
@@ -54,10 +48,9 @@
 	--width-crew-content-md: 43rem;
 	--width-crew-textbox-lg: 33.688rem;
 
-	/* crew height */
 	--height-crew-textbox-lg: 45.875rem;
 
-	/* destination widths */
+	/* destination customs */
 	--width-planet-img-lg: 30rem;
 	--width-planet-img-md: 18.75rem;
 	--width-planet-content-lg: 69.375rem;

@@ -1,69 +1,149 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Space tourism website solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-  [Overview](#overview)
+   -  [The challenge](#the-challenge)
+   -  [Extra Features](#extra-features) 🆕
+   -  [Screenshot](#screenshot)
+   -  [Links](#links)
+-  [Installation & Setup](#installation--setup)
+-  [My process](#my-process)
+   -  [Built with](#built-with)
+   -  [What I learned](#what-i-learned)
+   -  [Continued development](#continued-development)
+   -  [Useful resources](#useful-resources)
+-  [Author](#author)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### The challenge
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Your users should be able to:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Extra Features
+- Used tanstack router to handle the dynamic rendering of sub-page contents.
+- Each sub-page is sharable, can be bookmarked, and persists on page refresh/reload.
+- Fully responsive across all screen sizes.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Screenshot
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Default Desktop view
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![](./demo/default-desktop.png)
+
+#### Multi-product cart view
+
+![](./demo/cart-view.png)
+
+#### Mobile view
+
+![](./demo/nav-mobile.png)
+![](./demo/product-in-cart-mobile.png)
+
+
+
+### Links
+
+-  Solution URL: [Repo URL](https://github.com/corneliusweb/space-tourism)
+-  Live Site URL: [Space Tourism](https://cornelius-space.vercel.app/)
+
+## Installation & Setup
+
+### Prerequisites
+
+-  Node.js (v20 or higher)
+-  pnpm or npm (v10 or higher)
+-  Git
+
+### Environment Setup
+
+-  This project was created with pnpm, but you can use any package manager:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/corneliusweb/space-tourism.git
+   cd sneakers
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   # or
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   pnpm dev
+   # or
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5173`
+
+## Available Scripts
+
+In the project directory, you can run:
+
+-  `pnpm dev` or `npm run dev`
+
+   -  Runs the app in development mode
+   -  Open [http://localhost:5173](http://localhost:5173) to view it in the browser
+   -  The page will reload when you make changes
+
+-  `pnpm build` or `npm run build`
+
+   -  Builds the app for production to the `dist` folder
+   -  It correctly bundles React in production mode and optimizes the build for the best performance
+   -  The build is minified and the filenames include the hashes
+
+-  `pnpm preview` or `npm run preview`
+
+   -  Locally preview the production build
+   -  Serves the built files from the `dist` folder
+
+-  `pnpm lint` or `npm run lint`
+   -  Runs ESLint to check for code quality issues
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [TypeScript v5.8.3](https://typescript.org) - A JavaScript subset
+- [TanstackRouter](https://tanstack.dev/router) - A fully type-safe modern and scalable routing for React and Solid applications
+- [Tailwindcss v4.1](https://tailwindcss.com/) - CSS framework
+
+
+### What I learned
+
+I learned a better way to handle dynamic backgrounds in an application.
+I practiced, and learned a lot of tanstack routing techniques while working on this project.
+Also, it created another avenue to work with TypeScript, and get familiar.
+
+### Continued development
+I look forward to using SEO tools like ZHead & UnHead to better present the pages.
+Massive application of tooltips is being considered.
+
+
+### Useful resources
+
+- [Total TypeScript](https://totaltypescript.com) - This helped me to browse the types to use and in which scenario to do so.
+
+## Author
+
+-  Website - [corneliusweb](https://github.com/corneliusweb)
+-  Twitter(X) - [@corneliusweb](https://x.com/corneliusweb_)

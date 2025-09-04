@@ -14,8 +14,8 @@ function Index() {
 	});
 
 	return (
-		<section className='sm:mt-20 lg:flex lg:items-end lg:justify-center lg:mt-0 lg:h-99'>
-			<div className='lg:flex lg:justify-between lg:items-center h-full w-full lg:px-35'>
+		<section className='sm:mt-20 relative lg:mt-0 lg:h-home-content-lg lg:mb-25'>
+			<div className='h-full w-full lg:flex lg:justify-between lg:items-end lg:px-35 lg:gap-10 xl:gap-0'>
 				<div className='w-85 mx-auto sm:w-lg lg:mx-0'>
 					<h1 className='text-center uppercase lg:text-left'>
 						<span className='font-sans-cond tracking-widest text-base text-blue-300 sm:text-md-500'>
@@ -33,10 +33,10 @@ function Index() {
 					</p>
 				</div>
 
-				<div className=' py-25 lg:p-0 lg:w-90 lg:h-90 lg:flex lg:items-center lg:justify-center transition-all duration-300 lg:hover:rounded-full lg:hover:bg-white/10 lg:hover:backdrop-blur-[1px]'>
+				<div className=' py-25 lg:p-0 lg:w-70 lg:h-70 xl:w-90 xl:h-90 lg:flex lg:items-center lg:justify-center transition-all duration-300 lg:hover:rounded-full lg:hover:bg-white/10 lg:hover:backdrop-blur-[1px]'>
 					<Link
 						to='/destination'
-						className='font-serif text-lg mx-auto flex uppercase w-36 h-36 rounded-full items-center justify-center bg-white text-black tracking-widest tablet:w-68 tablet:h-68'
+						className='font-serif text-xl mx-auto flex uppercase w-36 h-36 rounded-full items-center justify-center bg-white text-black tracking-widest tablet:w-68 tablet:h-68'
 					>
 						Explore
 					</Link>
