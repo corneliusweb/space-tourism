@@ -14,8 +14,17 @@ const Header = () => {
 	};
 	disableScroll();
 
+	// close nav when a link is clicked
+	const handleLinkClick = (e: React.MouseEvent<HTMLUListElement>) => {
+		const target = e.target as Element;
+		const link = target.closest('a');
+		if (link) {
+			setIsNavOpen(false);
+		}
+	};
+
 	return (
-		<header className='flex justify-between items-center p-8 tablet:p-0 tablet:pl-10 lg:pr-10 lg:pt-12 lg:pl-12'>
+		<header className='flex justify-between items-center p-8 pb-0 tablet:p-0 tablet:pl-10 lg:pr-10 lg:pt-12 lg:pl-12'>
 			<Link to='/'>
 				<img src={logo} alt='space tourism logo' />
 			</Link>
@@ -30,7 +39,7 @@ const Header = () => {
 			{/* Mobile nav */}
 			{isNavOpen && (
 				<nav className='tablet:hidden'>
-					<div className='absolute right-0 top-0 w-3/5 bg-[#0B0D17]/80 h-screen p-8 backdrop-blur-[80px]'>
+					<div className='absolute right-0 top-0 w-3/5 bg-[#0B0D17]/80 min-h-screen p-8 backdrop-blur-[80px]'>
 						<button
 							className='float-right'
 							onClick={() => setIsNavOpen(false)}
@@ -39,7 +48,7 @@ const Header = () => {
 						</button>
 						<ul
 							className='mt-18 text-xl grid gap-6'
-							onClick={() => setIsNavOpen(false)}
+							onClick={handleLinkClick}
 						>
 							<li>
 								<span className='font-bold text-xl mr-3'>00</span>
