@@ -38,7 +38,7 @@ const Header = () => {
 
 			{/* Mobile nav */}
 			{isNavOpen && (
-				<nav className='tablet:hidden'>
+				<nav className='tablet:hidden z-2'>
 					<div className='absolute right-0 top-0 w-3/5 bg-[#0B0D17]/80 min-h-screen p-8 backdrop-blur-[80px]'>
 						<button
 							className='float-right'

@@ -34,18 +34,20 @@ Your users should be able to:
 
 ### Screenshot
 
-#### Default Desktop view
+#### Desktop views
 
-![](./demo/default-desktop.png)
+![](./demo/default.png)
+![](./demo/desktop-tech.png)
 
-#### Multi-product cart view
+#### Tablet views
 
-![](./demo/cart-view.png)
+![](./demo/iPad-v.png)
+![](./demo/iPad-h.png)
 
-#### Mobile view
+#### Mobile views
 
-![](./demo/nav-mobile.png)
-![](./demo/product-in-cart-mobile.png)
+![](./demo/phone-crew.png)
+![](./demo/phone-dest.png)
 
 
 
