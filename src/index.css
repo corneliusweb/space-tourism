@@ -36,6 +36,13 @@
 	--text-md-500: 1.75rem;
 	--text-md-400: 1.125rem;
 
+	/* crew widths */
+	--width-crew-img: 16.953rem;
+	--width-crew-img-md: 27.925rem;
+	--width-crew-content-lg: 69.375rem;
+	--width-crew-textbox-lg: 33.688rem;
+	--height-crew-textbox-lg: 45.875rem;
+
 	/* planet widths */
 	--width-planet-img-lg: 30rem;
 	--width-planet-img-md: 18.75rem;
@@ -69,14 +76,6 @@
 	h6,
 	p {
 		font-weight: 400;
-	}
-
-	/* make form elements easier to work with */
-	input,
-	button,
-	textarea,
-	select {
-		font: inherit;
 	}
 
 	button {
